@@ -7,7 +7,17 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+        lobster: ['Lobster', 'sans-serif'],
+      },
+      colors: {
+        header: '#333333',
+        title: '#251D2B',
+        description: '#302837',
+      },
+    },
   },
   plugins: [],
 };
