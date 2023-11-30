@@ -9,8 +9,8 @@ const Header = () => {
     setOpen(!open);
   }
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-header py-2 px-360 md:px-280">
-      <div className="flex items-center flex-shrink-0 text-white mr-6 mt-4 mb-4 lg:ml-10 ">
+    <nav className="flex items-center justify-between flex-wrap bg-header py-4 px-6 2xl:px-360 xl:px-280 lg:px-120">
+      <div className="flex items-center flex-shrink-0 text-white">
         <svg
           className="fill-current h-8 w-8 mr-2"
           width="54"
@@ -22,7 +22,7 @@ const Header = () => {
         </svg>
         <span className="font-lobster text-3xl tracking-tight">Brasserie</span>
       </div>
-      <div className="block lg:hidden">
+      <div className="block lg:hidden transition-full duration-300 ease-in">
         <button
           className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white mt-4 mb-4"
           onClick={handleHeader}
@@ -40,9 +40,9 @@ const Header = () => {
       <div
         className={`${
           open ? ' block' : 'hidden'
-        } lg:flex lg:items-center lg:w-auto w-full flex-grow `}
+        } lg:flex lg:items-center lg:w-auto w-full flex-grow transition-all duration-500 ease-in-out justify-end`}
       >
-        <div className="text-sm lg:flex-grow text-center ">
+        <div className="text-sm lg:flex-grow text-center  lg:text-end">
           <a
             href="#responsive-header"
             className="block capitalize mt-4 mb-4 font-inter font-normal text-white lg:inline-block lg:mr-4 text-teal-200 hover:text-white no-underline"
@@ -75,7 +75,7 @@ const Header = () => {
           </a>
         </div>
         <div className="justify-center flex">
-          <button className="font-inter font-normal text-theme bg-transparent border-2 border-theme flex items-center justify-center rounded-md w-40 h-12 lg:ml-10 transition-all duration-200 ease-in-out hover:bg-theme hover:text-white">
+          <button className="font-inter font-normal text-theme bg-transparent border-2 border-theme flex items-center justify-center rounded-md w-40 h-12 transition-all duration-200 ease-in-out hover:bg-theme hover:text-white">
             Table Booking
           </button>
         </div>
