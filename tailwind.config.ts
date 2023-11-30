@@ -16,6 +16,11 @@ const config: Config = {
         header: '#333333',
         title: '#251D2B',
         description: '#302837',
+        theme: '#FF5311',
+      },
+      spacing: {
+        '360': '360px',
+        '280': '280px',
       },
     },
   },
