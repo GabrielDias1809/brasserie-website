@@ -9,7 +9,7 @@ const Header = () => {
     setOpen(!open);
   }
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-header py-4 px-6 2xl:px-360 xl:px-280 lg:px-120">
+    <nav className="w-full flex items-center justify-between flex-wrap bg-header py-4 px-6 2xl:px-360 xl:px-280 lg:px-120 shadow-lg fixed">
       <div className="flex items-center flex-shrink-0 text-white">
         <svg
           className="fill-current h-8 w-8 mr-2"
