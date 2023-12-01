@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnglesUp } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
   return (
@@ -12,9 +14,9 @@ const About = () => {
           // Outros estilos de plano de fundo podem ser adicionados conforme necessário
         }}
       >
-        <div className="2xl:px-360 xl:px-280 lg:px-120 md:px-28 px-10 grid grid-cols-1 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sml:grid-cols-2">
+        <div className="2xl:px-360 xl:px-280 lg:px-120 md:px-28 px-10 grid grid-cols-1 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1">
           <div className="relative justify-center pt-20 hidden lg:flex">
-            <div className="relative w-3/4 h-3/4 pl-32 group">
+            <div className="relative w-3/4 h-3/4 pl-32">
               <img
                 src="/images/restaurant-1.jpg"
                 alt=""
@@ -23,7 +25,7 @@ const About = () => {
               <img
                 src="/images/restaurant-2.jpg"
                 alt=""
-                className="absolute inset-0 z-10 opacity-100 group-hover:opacity-0 transition-all duration-300 ease-in m-auto"
+                className="absolute inset-0 z-10 opacity-100 hover:opacity-0 transition-all duration-300 ease-in m-auto"
               />
             </div>
           </div>
@@ -50,7 +52,7 @@ const About = () => {
               pretium. Suspendisse potenti. Nullam sed lorem vel nibh porta
               mollis.
             </p>
-            <button className="font-inter text-sm text-white font-normal capitalize text-center py-5 px-7 bg-theme rounded-md mt-10 mb-20">
+            <button className="font-inter text-sm text-white font-normal capitalize text-center bg-theme rounded-md mt-10 mb-20 w-40 h-12">
               Discover Menu
             </button>
           </div>
