@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <section className="pt-20">
+    <section className="pt-20" id="home">
       <div
         className="h-auto"
         style={{

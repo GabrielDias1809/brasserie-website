@@ -1,12 +1,10 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesUp } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
   return (
-    <section>
+    <section id="about-us">
       <div
-        className="h-auto"
+        className="h-screen"
         style={{
           backgroundImage: "url('/images/aboutBanner.png')",
           backgroundSize: 'cover', // Para ajustar o tamanho da imagem

@@ -2,14 +2,57 @@ import React, { MouseEventHandler } from 'react';
 
 const Header = () => {
   const [open, setOpen] = React.useState(false);
+  const [menu, setMenu] = React.useState(false);
 
   function handleHeader(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) {
     setOpen(!open);
   }
+
+  //scroll suave até a section
+  if (typeof document !== 'undefined') {
+    const internalLinks: NodeListOf<HTMLAnchorElement> =
+      document.querySelectorAll('.js-menu a[href^="#"]');
+
+    const scrollToSection = (event: MouseEvent) => {
+      event.preventDefault();
+      const link = event.currentTarget as HTMLAnchorElement;
+      if (link) {
+        const href = link.getAttribute('href') as string;
+        if (href) {
+          const section = document.querySelector(href) as HTMLElement;
+
+          if (section) {
+            const topo = section.offsetTop - 100;
+            window.scrollTo({
+              top: topo,
+              behavior: 'smooth',
+            });
+          }
+        }
+      }
+      setMenu(false);
+      if (link?.firstChild?.textContent !== 'brasserie') {
+        setOpen(!open);
+      }
+    };
+
+    React.useEffect(() => {
+      internalLinks.forEach((link) => {
+        link.addEventListener('click', scrollToSection);
+      });
+
+      return () => {
+        internalLinks.forEach((link) => {
+          link.removeEventListener('click', scrollToSection);
+        });
+      };
+    }, [internalLinks]);
+  }
+
   return (
-    <nav className="w-full flex items-center justify-between flex-wrap bg-header py-4 px-6 2xl:px-360 xl:px-280 lg:px-120 shadow-lg fixed">
+    <nav className="w-full flex items-center justify-between flex-wrap bg-header py-4 px-6 2xl:px-360 xl:px-280 lg:px-120 shadow-lg fixed js-menu">
       <div className="flex items-center flex-shrink-0 text-white">
         <svg
           className="fill-current h-8 w-8 mr-2"
@@ -20,7 +63,11 @@ const Header = () => {
         >
           <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
         </svg>
-        <span className="font-lobster text-3xl tracking-tight">Brasserie</span>
+        <a href="#home">
+          <span className="font-lobster text-3xl tracking-tight capitalize">
+            brasserie
+          </span>
+        </a>
       </div>
       <div className="block lg:hidden transition-full duration-300 ease-in">
         <button
@@ -39,21 +86,21 @@ const Header = () => {
       </div>
       <div
         className={`${
-          open ? ' block' : 'hidden'
-        } lg:flex lg:items-center lg:w-auto w-full flex-grow transition-all duration-500 ease-in-out justify-end`}
+          open ? ' block transition-all duration-500 ease-in-out' : 'hidden'
+        } lg:flex lg:items-center lg:w-auto w-full flex-grow  justify-end`}
       >
-        <div className="text-sm lg:flex-grow text-center  lg:text-end">
+        <div className="text-sm lg:flex-grow text-center lg:text-end ">
           <a
-            href="#responsive-header"
+            href="#home"
             className="block capitalize mt-4 mb-4 font-inter font-normal text-white lg:inline-block lg:mr-4 text-teal-200 hover:text-white no-underline"
           >
-            About Us
+            Home
           </a>
           <a
-            href="#responsive-header"
+            href="#about-us"
             className="block capitalize mt-4 font-inter font-normal text-white lg:inline-block lg:mr-4 text-teal-200 hover:text-white no-underline"
           >
-            menu
+            About Us
           </a>
           <a
             href="#responsive-header"
