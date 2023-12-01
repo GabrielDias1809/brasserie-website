@@ -7,7 +7,7 @@ const Home = () => {
         className="h-auto"
         style={{
           backgroundImage: "url('/images/homeBanner.png')",
-          backgroundSize: 'fit', // Para ajustar o tamanho da imagem
+          backgroundSize: 'cover', // Para ajustar o tamanho da imagem
           backgroundPosition: 'center', // Para posicionar a imagem
           // Outros estilos de plano de fundo podem ser adicionados conforme necessário
         }}

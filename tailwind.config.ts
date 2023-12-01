@@ -19,11 +19,17 @@ const config: Config = {
         theme: '#FF5311',
         darkTheme: '#c34210',
       },
+      screens: {
+        sml: '490px',
+      },
       spacing: {
+        '300': '300px',
+        '350': '350px',
         '360': '360px',
         '280': '280px',
         '160': '160px',
         '120': '120px',
+        '470': '470px',
         '500': '500px',
       },
     },
