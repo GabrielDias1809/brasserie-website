@@ -52,7 +52,7 @@ const Header = () => {
   }
 
   return (
-    <nav className="w-full flex items-center justify-between flex-wrap bg-header py-4 px-6 2xl:px-360 xl:px-280 lg:px-120 shadow-lg fixed js-menu">
+    <nav className="w-full flex items-center justify-between flex-wrap bg-header py-4 px-6 2xl:px-360 xl:px-280 lg:px-120 shadow-lg fixed js-menu z-50">
       <div className="flex items-center flex-shrink-0 text-white">
         <svg
           className="fill-current h-8 w-8 mr-2"
@@ -103,7 +103,7 @@ const Header = () => {
             About Us
           </a>
           <a
-            href="#responsive-header"
+            href="#featured-foods"
             className="block capitalize mt-4 mb-4 font-inter font-normal text-white lg:inline-block lg:mr-4 text-teal-200 hover:text-white no-underline"
           >
             pages
